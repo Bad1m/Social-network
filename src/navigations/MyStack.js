@@ -7,20 +7,31 @@ import Posts from "../screens/Posts";
 import Detail from "../screens/Detail";
 import ContactsScreen from "../screens/ContactsScreen";
 
+import Register from "../screens/Register";
+import BaseLayout from "../components/base-layout";
+
 const Stack = createNativeStackNavigator();
 
 const MyStack = () => {
   return (
     <NavigationContainer>
-        <Stack.Navigator
-          initialRouteName="Home"
-          screenOptions={{ headerShown: false }}
-        >
-          <Stack.Screen name="Home" component={Home} />
-          <Stack.Screen name="Detail" component={Detail} />
-          <Stack.Screen name="Posts" component={Posts} />
-          <Stack.Screen name="ContactsScreen" component={ContactsScreen} />
-        </Stack.Navigator>
+      <Stack.Navigator
+        initialRouteName="Register"
+        screenOptions={{ headerShown: false }}
+      >
+        <Stack.Screen name="Register">
+          {(props) => (
+            <BaseLayout>
+              <Register navigation={props.navigation} />
+            </BaseLayout>
+          )}
+        </Stack.Screen>
+
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Detail" component={Detail} />
+        <Stack.Screen name="Posts" component={Posts} />
+        <Stack.Screen name="ContactsScreen" component={ContactsScreen} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };
