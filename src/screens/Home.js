@@ -14,6 +14,10 @@ export default class Home extends React.Component {
     this.setState({ popularSelected: !this.state.popularSelected });
   };
 
+  handleLogout = () => {
+    this.props.navigation.navigate("Register");
+  };
+
   render() {
     const contact = {
       photo: require("../images/p2.jpg"),
@@ -43,6 +47,19 @@ export default class Home extends React.Component {
               />
               <Text style={styles.settingsText}>Контакты</Text>
             </TouchableOpacity>
+
+            <View>
+              <TouchableOpacity onPress={this.handleLogout} activeOpacity={0.8}>
+                <Text
+                  style={{
+                    color: "#ffffff",
+                    letterSpacing: 1.5,
+                  }}
+                >
+                  Регистрация
+                </Text>
+              </TouchableOpacity>
+            </View>
           </View>
 
           <Text style={styles.title}>Поиск фото</Text>
