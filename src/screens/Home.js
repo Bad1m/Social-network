@@ -4,7 +4,8 @@ import {ScrollView, TextInput} from "react-native";
 import Icon from "@expo/vector-icons/Entypo";
 import Posts from "../screens/Posts";
 import styles from "./styles";
-import PostSlider from '../screens/PostSlider'
+import PostSlider from '../screens/PostSlider';
+import PostVideo from '../screens/PostVideo';
 
 export default class Home extends React.Component {
     state = {
@@ -154,9 +155,15 @@ export default class Home extends React.Component {
                         </View>
                         <View style={{flexDirection: "row"}}>
                             <PostSlider
-                                onPress={() => this.props.navigation.navigate('Detail', {contact})} name="Max Bator"
-                                        profile={require('../images/p3.jpg')} photo={require('../images/8.jpg')}/>
+                                onPress={() => this.props.navigation.navigate('Detail', {contact})} name="Никита Котегов"
+                                        profile={require('../images/p3.jpg')}/>
                             <View style={styles.style7}></View>
+                        </View>
+                        <View style={{flexDirection: "row"}}>
+                            <PostVideo
+                                onPress={() => this.props.navigation.navigate('Detail', {contact})} name="Ярослав Кабашов"
+                                profile={require('../images/dogs.jpg')}/>
+                            <View style={styles.style6}></View>
                         </View>
                     </View>
                 </View>
