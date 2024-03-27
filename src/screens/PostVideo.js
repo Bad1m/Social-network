@@ -74,7 +74,6 @@ export default class PostVideo extends React.Component{
                        useNativeControls
                        resizeMode={ResizeMode.CONTAIN}
                        isLooping
-
                    />
                </View>
 
