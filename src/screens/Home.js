@@ -19,7 +19,7 @@ export default class Home extends React.Component {
     handleLogout = () => {
         this.props.navigation.navigate("Register");
     };
-
+    
     render() {
         const contact = {
             photo: require("../images/p2.jpg"),
@@ -48,6 +48,19 @@ export default class Home extends React.Component {
                                 style={{width: 20, height: 20}}
                             />
                             <Text style={styles.settingsText}>Контакты</Text>
+                        </TouchableOpacity>
+                    </View>
+
+                    <View style={styles.headerContent}>
+                        <TouchableOpacity
+                            onPress={() => this.props.navigation.navigate("MusicPlayerScreen")}
+                            style={styles.settingsContainer}
+                        >
+                            <Image
+                                source={require("../images/Untitled.png")}
+                                style={{width: 20, height: 20}}
+                            />
+                            <Text style={styles.settingsText}>Музыка</Text>
                         </TouchableOpacity>
 
                         <View>
@@ -153,6 +166,7 @@ export default class Home extends React.Component {
                             />
                             <View style={styles.style6}></View>
                         </View>
+
                         <View style={{flexDirection: "row"}}>
                             <PostSlider
                                 onPress={() => this.props.navigation.navigate('Detail', {contact})} name="Никита Котегов"
