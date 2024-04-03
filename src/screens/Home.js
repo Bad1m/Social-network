@@ -4,6 +4,8 @@ import {ScrollView, TextInput} from "react-native";
 import Icon from "@expo/vector-icons/Entypo";
 import Posts from "../screens/Posts";
 import styles from "./styles";
+import PostSlider from '../screens/PostSlider';
+import PostVideo from '../screens/PostVideo';
 
 export default class Home extends React.Component {
     state = {
@@ -14,6 +16,10 @@ export default class Home extends React.Component {
         this.setState({popularSelected: !this.state.popularSelected});
     };
 
+    handleLogout = () => {
+        this.props.navigation.navigate("Register");
+    };
+    
     render() {
         const contact = {
             photo: require("../images/p2.jpg"),
@@ -56,6 +62,19 @@ export default class Home extends React.Component {
                             />
                             <Text style={styles.settingsText}>Музыка</Text>
                         </TouchableOpacity>
+
+                        <View>
+                            <TouchableOpacity onPress={this.handleLogout} activeOpacity={0.8}>
+                                <Text
+                                    style={{
+                                        color: "#ffffff",
+                                        letterSpacing: 1.5,
+                                    }}
+                                >
+                                    Регистрация
+                                </Text>
+                            </TouchableOpacity>
+                        </View>
                     </View>
 
                     <Text style={styles.title}>Поиск фото</Text>
@@ -145,6 +164,19 @@ export default class Home extends React.Component {
                                 profile={require("../images/p1.jpg")}
                                 photo={require("../images/3.jpg")}
                             />
+                            <View style={styles.style6}></View>
+                        </View>
+
+                        <View style={{flexDirection: "row"}}>
+                            <PostSlider
+                                onPress={() => this.props.navigation.navigate('Detail', {contact})} name="Никита Котегов"
+                                        profile={require('../images/p3.jpg')}/>
+                            <View style={styles.style7}></View>
+                        </View>
+                        <View style={{flexDirection: "row"}}>
+                            <PostVideo
+                                onPress={() => this.props.navigation.navigate('Detail', {contact})} name="Ярослав Кабашов"
+                                profile={require('../images/dogs.jpg')}/>
                             <View style={styles.style6}></View>
                         </View>
                     </View>

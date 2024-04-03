@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 35,
   },
   headerContent: {
+    justifyContent: "space-between",
     flexDirection: "row",
     width: "100%",
     paddingTop: 40,
@@ -52,7 +53,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFF",
     borderTopLeftRadius: 40,
     borderTopRightRadius: 40,
-    height: 1000,
     paddingHorizontal: 35,
   },
   tabContainer: {
@@ -76,8 +76,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFF",
     borderTopLeftRadius: 40,
     borderTopRightRadius: 40,
-    height: 1000,
     paddingHorizontal: 35,
+    paddingBottom: 50,
   },
   style4: {
     height: 160,
@@ -108,7 +108,16 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 20,
     borderBottomLeftRadius: 20,
   },
-  style7: {},
+  style7: {
+    height:160,
+    backgroundColor:"#3c636c",
+    width:20,
+    marginLeft: -290,
+    marginRight:20,
+    marginTop:120,
+    borderTopRightRadius: 20,
+    borderBottomRightRadius: 20,
+  },
 });
 
 export default styles;
